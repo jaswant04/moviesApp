@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 95%;
-    max-width: 1440px;
+    max-width: 1440px;   
     margin: 2rem auto;
     display: flex;
     justify-content: flex-start;
@@ -41,5 +41,12 @@ body {
         width: 100%;
         align-content: flex-start;
         margin: 1rem auto;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    .container{
+        justify-content: center;
+        align-items: center;
     }
 }

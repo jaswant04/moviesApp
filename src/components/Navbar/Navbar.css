@@ -43,7 +43,8 @@
     position: relative;
 }
 
-.dropbtn {
+.dropbtn,
+.btn-filter {
     background-color: #007bff;
     color: white;
     padding: 5px 20px;
@@ -51,6 +52,12 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.btn-filter {
+    border-radius: 0;
+    color: #fff;
+    text-align: center;
 }
 
 .dropbtn:hover {
@@ -89,6 +96,22 @@
     /* Position the dropdown to the left */
 }
 
+.filter-dropdown {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.black {
+    color: #000;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
     .navbar {

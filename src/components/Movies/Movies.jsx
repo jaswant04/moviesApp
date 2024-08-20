@@ -1,14 +1,20 @@
 import React from 'react'
-// import dataBase from '../../../db.json' //imported json file 
 import MovieCard from '../MovieCard/MovieCard';
 
 const Movies = ({ movies }) => {
+    const sliced = movies.slice(0, 30);
     return (
         <div className="container">
-            {/* Render the filtered movie data */}
-            {movies.map(movie => (
-                <MovieCard key={movie.id} movie={movie} />
-            ))}
+            {
+                sliced.length === 0 ?
+                    <div className="container">
+                        <p>No matching movies available. Try again</p>
+                    </div> : (
+                        sliced.map(movie => (
+                            <MovieCard key={movie.id} movie={movie} />
+                        ))
+                    )
+            }
         </div>
     );
 }

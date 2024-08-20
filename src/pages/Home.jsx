@@ -40,13 +40,19 @@ const Home = () => {
     }
     //sort by Year Desc
     const handleSortYrDesc = () => {
-        console.log("first")
         const filteredMovies = [...dataBase.movies].sort((a, b) =>
 
             b.year - a.year
         );
         setFilter(filteredMovies);
     }
+
+    const filterMovies = (selectedGenres) => {
+        const filteredMovies = dataBase.movies.filter((movie) => {
+            return movie.genres.some(genre => selectedGenres.includes(genre));
+        });
+        setFilter(filteredMovies);
+    };
 
 
     return (
@@ -57,6 +63,7 @@ const Home = () => {
                 onSortZA={handleSortZA}
                 onSortYrAsc={handleSortYrAsc}
                 onSortYrDesc={handleSortYrDesc}
+                onFilter={filterMovies}
             />
             <Movies movies={filterData} />
         </>

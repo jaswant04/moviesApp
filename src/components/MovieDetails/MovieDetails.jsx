@@ -23,7 +23,7 @@ const MovieDetails = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar md={true}/>
             <div className='movieDetails-wrapper'>
                 <img src={movie.posterUrl} alt={movie.title} />
                 <div className="details">
@@ -57,7 +57,7 @@ const MovieDetails = () => {
 
                 </div>
             </div>
-            <SimilarMovies genre={movie.genres} />
+            <SimilarMovies genre={movie.genres}  />
         </>
     );
 }
